@@ -26,6 +26,6 @@ var parsedNumber3 = parseInt(number3, 10)
 
 var parsedNumber4 = parseInt(number4, 10)
 
-console.log (parsedNumber3+parsedNumber4)
+console.log ('La suma es', parsedNumber3+parsedNumber4)
 
 
