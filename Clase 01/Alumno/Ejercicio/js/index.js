@@ -1,6 +1,6 @@
-var nombre = prompt('Ingrese su nombre')
+var name = prompt('Ingrese su nombre', 'Manuel')
 
-console.log ('Hola', nombre+'!')
+console.log ('Hola '+name+'!')
 
 var age = prompt('Ingrese su edad y sumará 15')
 
