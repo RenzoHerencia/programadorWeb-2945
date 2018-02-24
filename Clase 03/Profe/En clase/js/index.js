@@ -44,35 +44,35 @@
 
 // console.log(power(5, 3))
 
-// function askAndParse () {
-//   var number1 = prompt('Ingerese un número')
-//   var parsedNumber1 = parseInt(number1, 10)
-//   if (isNaN(parsedNumber1)) {
-//     return false
-//   } else {
-//     return parsedNumber1
-//   }
-// }
+function askAndParse() {
+  var number1 = prompt('Ingerese un número')
+  var parsedNumber1 = parseInt(number1, 10)
+  if (isNaN(parsedNumber1)) {
+    return false
+  } else {
+    return parsedNumber1
+  }
+}
 
-// var number1 = askAndParse()
+var number1 = askAndParse()
 
-// var number2 = askAndParse()
+var number2 = askAndParse()
 
-// if (number1 === false || number2 === false) {
-//   console.log('Error no ingresaste un número')
-// } else {
-//   console.log('La suma es ', number1 + number2)
+if (number1 === false || number2 === false) {
+  console.log('Error no ingresaste un número')
+} else {
+  console.log('La suma es ', number1 + number2)
 
-//   console.log('La resta es ', number1 - number2)
+  console.log('La resta es ', number1 - number2)
 
-//   console.log('La multiplicación es ', number1 * number2)
+  console.log('La multiplicación es ', number1 * number2)
 
-//   if (number2 === 0) {
-//     console.log('No se puede dividir por cero')
-//   } else {
-//     console.log('La división es ', number1 / number2)
-//   }
-// }
+  if (number2 === 0) {
+    console.log('No se puede dividir por cero')
+  } else {
+    console.log('La división es ', number1 / number2)
+  }
+}
 
 // SCOPE
 
@@ -160,13 +160,13 @@
 
 // console.log(result[0], result[1])
 
-function twoValuesReturn (number1, number2) {
-  var number1Mul = number1 * number1
-  var number2Mul = number2 * number2
+// function twoValuesReturn (number1, number2) {
+//   var number1Mul = number1 * number1
+//   var number2Mul = number2 * number2
 
-  return { number1: number1Mul, number2: number2Mul }
-}
+//   return { number1: number1Mul, number2: number2Mul }
+// }
 
-var result = twoValuesReturn(2, 3)
+// var result = twoValuesReturn(2, 3)
 
-console.log(result.number1, result.number2)
+// console.log(result.number1, result.number2)
