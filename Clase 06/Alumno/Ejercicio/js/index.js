@@ -1,43 +1,42 @@
-function User (firstName, lastName, age, address) {
-  this.showFullName = firstName + ' ' + lastName
+var studentsList = [
+  'CARLOS',
+  'GERONIMO',
+  'NICOLAS',
+  'LUCAS',
+  'MARIA',
+  'FEDERICO',
+  'ANTONIO',
+  'LORNA',
+  'JULIAN',
+  'DIEGO',
+  'DANIELA',
+  'JUAN',
+  'MATEO',
+  'BARBARA',
+  'AGUSTIN',
+  'MARIO',
+  'MARIEL',
+  'ANA',
+  'FLORENCIA'
+]
 
-  var id = Math.random()
-
-  this.isLegalAge = function () {
-    if (age >= 18) {
-      return true
-    } else {
-      return false
-    }
-    // return !!(age >= 18)
-  }
-
-  this.getId = function () {
-    return id
+function transformText (text) {
+  var textUpperCase
+  if (typeof name === 'string') {
+    textUpperCase = text.toUpperCase()
+    return textUpperCase
   }
 }
 
-var newUser = new User('Pedro', 'Fernandez', 14, 'Carmelino 689')
+function searchStudents () {
+  var index = -1
+  var name = prompt('Ingrese nombre')
+  var nameUpperCase = transformText(name)
+  for (var i = 0; i < studentsList.length; i++) {
+    if (studentsList.indexOf(nameUpperCase) !== -1) {
+      index = i
+    }
+  }
+}
 
-console.log(
-  newUser.showFullName,
-  newUser.age,
-  newUser.isLegalAge(),
-  newUser.address
-)
-
-// function Movie (tittle, year, director, actors) {
-//   this.getTittle = function () {
-//     return tittle
-//   }
-
-//   this.setTittle = function (newTittle) {
-//     tittle = newTittle
-//   }
-// }
-
-// var newMovie = new User('Star Wars', , 'George Lucas', 'Carmelino 689')
-
-// newStudent.setFirstName('Ana')
-
-// console.log()
+searchStudents()
