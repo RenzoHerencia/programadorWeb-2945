@@ -1,7 +1,7 @@
-var objectList = [
-  { firstName: 'ADRIAN', lastName: 'FERRE' },
-  { firstName: 'MATEO', lastName: 'MOLINA' },
-  { firstName: 'MARIA', lastName: 'FERNANDEZ' }
+var studentList = [
+  { firstName: 'Adrián', lastName: 'Ferré' },
+  { firstName: 'Mateo', lastName: 'Molina' },
+  { firstName: 'Maria', lastName: 'Fernandez' }
 ]
 
 function textToUpperCase (text) {
@@ -14,36 +14,41 @@ function searchStudentByFirstNameAndLastName (text) {
   var index = -1
   var textUpperCase = textToUpperCase(text)
 
-  for (var i = 0; i < objectList.length; i++) {
-    var student = objectList[i]
+  for (var i = 0; i < studentList.length; i++) {
+    var student = studentList[i]
     if (
-      student.firstName.indexOf(textUpperCase) !== -1 ||
-      student.lastName.indexOf(textUpperCase) !== -1
+      textToUpperCase(student.firstName).indexOf(textUpperCase) !== -1 ||
+      textToUpperCase(student.lastName).indexOf(textUpperCase) !== -1
     ) {
       index = i
       break
     }
   }
-  return console.log(index)
+  return index
 }
 
 function addNewStudent (studentFirstName, studentLastName) {
-  function Student (firstName, lastName) {
-    this.firstName = firstName
-    this.lastName = lastName
-  }
-
-  var studentFirstName
-  var studentLastName
-
-  var studentFirstNameUpperCase = textToUpperCase(studentFirstName)
-
-  objectList.firstName.push(studentFirstNameUpperCase)
-
+  var studentNameUpperCase = textToUpperCase(studentFirstName)
   var studentLastNameUpperCase = textToUpperCase(studentLastName)
 
-  objectList.lastName.push(studentFirstNameUpperCase)
+  studentList.push({
+    firstName: studentNameUpperCase,
+    lastName: studentLastNameUpperCase
+  })
+}
+// var name = prompt('Ingresa')
+// searchStudentByFirstNameAndLastName(name)
+
+// addNewStudent('juan', 'perez')
+// console.log(studentList)
+
+function deleteStudentName (studentName) {
+  var index = searchStudentByFirstNameAndLastName(studentName)
+  if (index !== -1) {
+    studentList.splice(index, 1)
+  }
 }
 
-addNewStudent('juan', 'perez')
-console.log(objectList)
+var name = prompt('Ingresa')
+deleteStudentName(name)
+console.log(studentList)

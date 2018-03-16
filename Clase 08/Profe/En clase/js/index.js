@@ -1,48 +1,48 @@
-// Traer elemento HTML a JS
+Traer elemento HTML a JS
 
-// var rootContainer = document.getElementById('root')
+var rootContainer = document.getElementById('root')
 
-// var option = prompt('Desea borrar el contenido')
+var option = prompt('Desea borrar el contenido')
 
-// if (option === 'si') {
-//   rootContainer.innerHTML = ''
-// }
+if (option === 'si') {
+  rootContainer.innerHTML = ''
+}
 
-// Agregar un texto a mi HTML
+Agregar un texto a mi HTML
 
-// var rootContainer = document.getElementById('root')
+var rootContainer = document.getElementById('root')
 
-// var text = prompt('Escriba el contenido')
+var text = prompt('Escriba el contenido')
 
-// rootContainer.innerHTML = '<h1><strong>' + text + '</strong></h1>'
+rootContainer.innerHTML = '<h1><strong>' + text + '</strong></h1>'
 
-// var imageUrl =
-//   'https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif'
+var imageUrl =
+  'https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif'
 
-// rootContainer.innerHTML = '<img src="' + imageUrl + '">'
+rootContainer.innerHTML = '<img src="' + imageUrl + '">'
 
-// showProgres(0)
+showProgres(0)
 
-// function showProgres (i) {
-//   setTimeout(function () {
-//     var progress =
-//       '<div class="progress"><div class="progress-bar" role="progressbar" style="width: ' +
-//       i +
-//       '%" aria-valuenow="' +
-//       i +
-//       '" aria-valuemin="0" aria-valuemax="100"></div></div>'
-//     rootContainer.innerHTML = progress
-//     if (i <= 100) {
-//       showProgres(i + 5)
-//     }
-//   }, 500)
-// }
+function showProgres (i) {
+  setTimeout(function () {
+    var progress =
+      '<div class="progress"><div class="progress-bar" role="progressbar" style="width: ' +
+      i +
+      '%" aria-valuenow="' +
+      i +
+      '" aria-valuemin="0" aria-valuemax="100"></div></div>'
+    rootContainer.innerHTML = progress
+    if (i <= 100) {
+      showProgres(i + 5)
+    }
+  }, 500)
+}
 
-// for (var i = 0; i <= 100; i++) {
-//   setTimeout(function () {}, 500)
-// }
+for (var i = 0; i <= 100; i++) {
+  setTimeout(function () {}, 500)
+}
 
-// Como mostrar armar un nodoe y appendearlo
+Como mostrar armar un nodoe y appendearlo
 
 var rootContainer = document.getElementById('root')
 
