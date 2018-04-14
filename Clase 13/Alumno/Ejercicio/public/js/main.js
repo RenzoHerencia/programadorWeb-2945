@@ -1,3 +1,9 @@
-$(document).ready(function(){
-    console.log('its working !');
+$(document).ready(function () {
+  $('#home').click(function () {
+    $('#main').load('../partials/home.html')
+  })
+
+  $('#people').click(function () {
+    $('#main').load('../partials/people.html')
+  })
 })
