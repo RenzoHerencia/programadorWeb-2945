@@ -1,105 +1,32 @@
-var firstNameInput = document.getElementById('firstNameInput')
+var passwordInput = document.getElementById('passwordInput')
 
-firstNameInput.onblur = function (event) {
-  var firstNameInputNode = event.target
+passwordInput.onblur = function (event) {
+  var passwordInputNode = event.target
 
-  var value = firstNameInputNode.value
+  var value = passwordInputNode.value
 
-  var parentFirstNameInputNode = firstNameInputNode.parentElement
+  var parentPasswordInputNode = passwordInputNode.parentElement
 
-  var textErrorNode = document.getElementById('textError')
+  var passwordErrorNode = document.getElementById('passwordError')
 
-  if (textErrorNode) {
-    parentFirstNameInputNode.removeChild(textErrorNode)
+  if (passwordErrorNode) {
+    parentPasswordInputNode.removeChild(passwordErrorNode)
   }
 
-  if (value) {
-    firstNameInputNode.classList.remove('is-invalid')
-    firstNameInputNode.classList.add('is-valid')
-    // console.log('El input esta lleno')
-  } else {
-    firstNameInputNode.classList.remove('is-valid')
-    firstNameInputNode.classList.add('is-invalid')
-    // console.log('Input vacio')
-
-    textErrorNode = document.createElement('span')
-
-    textErrorNode.id = 'textError'
-    textErrorNode.innerHTML = 'El campo está vacio'
-
-    parentFirstNameInputNode.appendChild(textErrorNode)
-  }
-  validateAllFields()
-}
-
-var lastNameInput = document.getElementById('lastNameInput')
-
-lastNameInput.onblur = function (event) {
-  var lastNameInputNode = event.target
-
-  var value = lastNameInputNode.value
-
-  var parentLastNameInputNode = lastNameInputNode.parentElement
-
-  var textErrorNode = document.getElementById('textError')
-
-  if (textErrorNode) {
-    parentLastNameInputNode.removeChild(textErrorNode)
-  }
-
-  if (value) {
-    lastNameInputNode.classList.remove('is-invalid')
-    lastNameInputNode.classList.add('is-valid')
-    // console.log('El input esta lleno')
-  } else {
-    lastNameInputNode.classList.remove('is-valid')
-    lastNameInputNode.classList.add('is-invalid')
-    // console.log('Input vacio')
-
-    textErrorNode = document.createElement('span')
-
-    textErrorNode.id = 'textError'
-    textErrorNode.innerHTML = 'El campo está vacio'
-
-    parentLastNameInputNode.appendChild(textErrorNode)
-  }
-  validateAllFields()
-}
-
-var emailInput = document.getElementById('emailInput')
-
-emailInput.onblur = function (event) {
-  var emailInputNode = event.target
-
-  var value = emailInputNode.value
-
-  var parentEmailInputNode = emailInputNode.parentElement
-
-  var emailErrorNode = document.getElementById('emailError')
-
-  if (emailErrorNode) {
-    parentEmailInputNode.removeChild(emailErrorNode)
-  }
-
-  if (
-    value &&
-    typeof value === 'string' &&
-    value.indexOf('@') !== -1 &&
-    value.indexOf('.') !== -1
-  ) {
-    emailInputNode.classList.remove('is-invalid')
-    emailInputNode.classList.add('is-valid')
+  if (value && typeof value === 'string' && value.length >= 6) {
+    passwordInputNode.classList.remove('is-invalid')
+    passwordInputNode.classList.add('is-valid')
     // console.log('Contraseña correcta')
   } else {
-    emailInputNode.classList.remove('is-valid')
-    emailInputNode.classList.add('is-invalid')
+    passwordInputNode.classList.remove('is-valid')
+    passwordInputNode.classList.add('is-invalid')
 
-    emailErrorNode = document.createElement('span')
+    passwordErrorNode = document.createElement('span')
 
-    emailErrorNode.id = 'emailError'
-    emailErrorNode.innerHTML = 'Correo inválido'
+    passwordErrorNode.id = 'passwordError'
+    passwordErrorNode.innerHTML = 'Contraseña con error'
 
-    parentEmailInputNode.appendChild(emailErrorNode)
+    parentPasswordInputNode.appendChild(passwordErrorNode)
 
     // console.log('Contraseña incorrecta')
   }

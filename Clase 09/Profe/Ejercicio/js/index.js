@@ -1,12 +1,18 @@
 var firstNameInput = document.getElementById('firstName')
 
+var firstNameInput = document.getElementById('dni')
+
+function showErrorEmptyInput (event) {}
+
 firstNameInput.onblur = showErrorOnEmptyInput
 
-var lastNameInput = document.getElementById('lastName')
+var dniInput = document.getElementById('dni')
 
-lastNameInput.onblur = function (event) {
-  showErrorOnEmptyInput(event)
-}
+// var lastNameInput = document.getElementById('lastName')
+
+// lastNameInput.onblur = function (event) {
+//   showErrorOnEmptyInput(event)
+// }
 
 function showErrorOnEmptyInput (event) {
   var inputNode = event && event.target
