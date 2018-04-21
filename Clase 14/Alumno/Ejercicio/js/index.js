@@ -18,4 +18,4 @@ $(document).ready(function (event) {
       var value = inputNode.val('0')
     }
   })
-})
+}) 
