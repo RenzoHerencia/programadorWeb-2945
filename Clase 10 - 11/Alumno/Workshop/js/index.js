@@ -56,12 +56,78 @@ dniInput.onblur = function (event) {
 
   var value = dniInputNode && dniInputNode.value
 
-  if (value && typeof value == 'number') {
+  if (!value || !number || number < 0 || index !== -1) {
     showValidInput(dniInputNode)
   } else {
     showInvalidInput(dniInputNode)
   }
   validateAllFields()
+}
+
+// document.getElementById('dni').onblur = function (event) {
+//   var dniNode = event.target
+
+//   var value = dniNode.value
+
+//   var parsedDni = parseInt(value, 10)
+
+//   if (
+//     parsedDni &&
+//     !isNaN(parsedDni) &&
+//     parsedDni >= 0 &&
+//     searchIndexByDni(parsedDni) === -1
+//   ) {
+//     dniNode.classList.remove('is-invalid')
+//     dniNode.classList.add('is-valid')
+//   } else {
+//     dniNode.classList.remove('is-valid')
+//     dniNode.classList.add('is-invalid')
+//   }
+// }
+
+var dniInput = document.getElementById('dni')
+dniInput.onblur = function (event) {
+  validateDniInput(event)
+}
+dniInput.onmouseleave = function (event) {
+  validateDniInput(event)
+}
+
+function validateDniInput (event) {
+  var textInputNode = event.target
+  var value = textInputNode.value
+  var parentTextInputNode = textInputNode.parentElement
+  dniErrorInputNode = document.getElementById('dniErrorNode')
+  if (dniErrorInputNode) {
+    parentTextInputNode.removeChild(dniErrorInputNode)
+  }
+
+  var number = parseNumber(value)
+  var index = searchStudentByDni(number)
+  if (!value || !number || number < 0 || index !== -1) {
+    textInputNode.classList.remove('is-valid')
+    textInputNode.classList.add('is-invalid')
+
+    var errorText = 'ERROR: '
+    if (!value) {
+      errorText = errorText + ' Campo DNI vacio.'
+    }
+    if (!number || number < 0) {
+      errorText = errorText + ' No es un numero valido.'
+    }
+    if (index !== -1) {
+      errorText = errorText + ' DNI ya existe.'
+    }
+
+    var dniErrorNode = document.createElement('span')
+    dniErrorNode.id = 'dniErrorNode'
+    dniErrorNode.innerHTML = errorText
+    parentTextInputNode.appendChild(dniErrorNode)
+  } else {
+    textInputNode.classList.remove('is-invalid')
+    textInputNode.classList.add('is-valid')
+  }
+  validateAddStudentFields()
 }
 
 function validateAllFields () {
